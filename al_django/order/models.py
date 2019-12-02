@@ -14,7 +14,10 @@ class Order(models.Model):
     register_date = models.DateTimeField(auto_now=True, verbose_name='등록날짜')
     quantity = models.IntegerField(verbose_name='수량')
 
+    def __str__(self):
+        return str(self.aluser) + ' ' + str(self.product)
+
     class Meta:
         db_table = 'albatross9_order'
         verbose_name = '주문'
-        verbose_name_plural = '주문'
+        verbose_name_plural = '주문들'
